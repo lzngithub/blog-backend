@@ -20,7 +20,9 @@ yarn
 yarn build
 
 # 进入到脚本所在的目录
-cd "$(dirname "$0")"
+cd ../blog-backend/src/front
+
+pwd
 
 echo '重新启动前端服务'
 
