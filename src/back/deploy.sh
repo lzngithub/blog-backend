@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # 进入项目文件
+echo '进入脚本'
+pwd
 # cd ../../../blog-backend || exit
 
 git pull --force
