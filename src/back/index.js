@@ -12,6 +12,7 @@ handler.on("error", function (err) {
 
 //监听push钩子 时触发函数
 handler.on("push", function (event) {
+  console.log("back");
   console.log("收到一条更新来自：");
   console.log("仓库" + event.payload.repository.name);
   console.log("分支" + event.payload.ref);
