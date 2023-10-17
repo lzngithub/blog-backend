@@ -7,11 +7,10 @@ git pull --force
 
 yarn
 
-# 停止项目
-pm2 stop backend.js
+echo '重新启动后端服务'
 
 # 重新启动项目
-pm2 start backend.js
+pm2 restart backend.js
 
 echo '后端服务更新成功'
 
