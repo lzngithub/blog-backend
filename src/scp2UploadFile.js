@@ -7,7 +7,7 @@ client.scp(
     host: 'xxx',
     username: 'xxx',
     password: 'xxx',
-    path: '/opt/node/fontend/blog/deploy',
+    path: '/opt/node/fontend/blog/blog-backend',
   },
   function (err) {
     if (err) {

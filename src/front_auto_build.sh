@@ -15,9 +15,9 @@ yarn build
 cd ../blog-backend/src || exit
 
 # 停止项目
-pm2 stop fontend.js
+pm2 stop frontend.js
 
 # 重新启动项目
-pm2 start fontend.js
+pm2 start frontend.js
 
-echo '部署成功'
+echo '前端服务更新成功'

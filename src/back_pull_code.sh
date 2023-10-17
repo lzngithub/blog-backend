@@ -5,10 +5,14 @@ cd ../src || exit
 
 git pull --force
 
-echo '拉取代码成功'
-
 yarn
 
-echo '依赖安装成功'
+# 停止项目
+pm2 stop backend.js
+
+# 重新启动项目
+pm2 start backend.js
+
+echo '后端服务更新成功'
 
 
