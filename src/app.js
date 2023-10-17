@@ -15,6 +15,7 @@ http
       res.statusCode = 404;
       res.end("no such location");
       console.log(err);
+      console.log("测试文本front");
       console.log("匹配不到路由了,测试");
     });
   })
