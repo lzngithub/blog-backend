@@ -28,8 +28,9 @@ handler.on('error', function (err) {
 
 //监听push钩子 时触发函数
 handler.on('push', function (event) {
-  console.log('Received a push');
-  console.log(event.payload.repository.name, event.payload.ref);
+  console.log('收到一条更新来自：');
+  console.log('仓库' + event.payload.repository.name);
+  console.log('分支' + event.payload.ref);
   const rumCommand = (cmd, args, callback) => {
     const child = spawn(cmd, args);
     let response = '';
