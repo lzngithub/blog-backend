@@ -1,0 +1,18 @@
+{
+  "name": "fontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.2",
+    "scp2": "^0.5.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
