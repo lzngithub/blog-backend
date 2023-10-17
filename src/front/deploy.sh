@@ -24,6 +24,6 @@ cd "$(dirname "$0")"
 
 echo '重新启动前端服务'
 
-pm2 restart server.js
+pm2 start server.js
 
 echo '前端服务更新成功'
