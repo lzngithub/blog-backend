@@ -12,7 +12,7 @@ scp2 + express + pm2 + github-webhook-handler
 
 服务器部署两个 node 服务，一个后端，一个前端的，其实可以只部署一个服务的，但区分开会更清晰一点。
 
-当前端项目的 main 分支代码有更新的时候，通过 github 的 Webhooks 给后端服务发送通知，后端服务收到消息，通过运行自动化部署脚本(auto_build.sh)进行部署更新。
+当前端项目的 main 分支代码有更新的时候，通过 github 的 Webhooks 给后端服务发送通知，后端服务收到消息，通过运行自动化部署脚本(front_auto_build.sh)进行部署更新。
 
 node.js 是单进程，进程被杀死后整个服务就跪了，通过进程管理工具 pm2 进行管理。
 

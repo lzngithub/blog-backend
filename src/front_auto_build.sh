@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 进入项目文件
-cd ../blog-vuepress || exit
+cd ../../blog-vuepress || exit
 
 # 拉取代码
-git pull
+git pull --force
 
 # 安装依赖
 yarn
@@ -12,7 +12,7 @@ yarn
 # 打包项目
 yarn build
 
-cd ../deploy || exit
+cd ../blog-backend/src || exit
 
 # 停止项目
 pm2 stop fontend.js

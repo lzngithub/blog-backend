@@ -39,7 +39,7 @@ handler.on('push', function (event) {
   if (event && event.payload && event.payload.ref === 'refs/heads/main') {
     console.log('开始自动构建');
     // 执行自动部署脚本
-    rumCommand('sh', ['./auto_build.sh'], (txt) => {
+    rumCommand('sh', ['./front_auto_build.sh'], (txt) => {
       console.log('部署成功');
       console.log(txt);
     });
