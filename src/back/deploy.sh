@@ -17,7 +17,7 @@ yarn
 echo '重新启动后端服务'
 
 # 重新启动项目
-pm2 start ./src/app.js
+pm2 restart ./src/app.js
 
 echo '后端服务更新成功'
 
