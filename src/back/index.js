@@ -1,35 +1,34 @@
-const createHandler = require('github-webhook-handler');
-const spawn = require('child_process').spawn;
+const createHandler = require("github-webhook-handler");
+const spawn = require("child_process").spawn;
 const handler = createHandler({
-  path: '/backPushCode',
-  secret: 'liangzn',
+  path: "/backPushCode",
+  secret: "liangzn",
 });
 
 //监听发生错误
-handler.on('error', function (err) {
-  console.error('Error:', err);
+handler.on("error", function (err) {
+  console.error("Error:", err);
 });
 
 //监听push钩子 时触发函数
-handler.on('push', function (event) {
-  console.log('收到一条更新来自：');
-  console.log('仓库' + event.payload.repository.name);
-  console.log('分支' + event.payload.ref);
+handler.on("push", function (event) {
+  console.log("收到一条更新来自：");
+  console.log("仓库" + event.payload.repository.name);
+  console.log("分支" + event.payload.ref);
   const rumCommand = (cmd, args, callback) => {
     const child = spawn(cmd, args);
-    const response = '';
-    child.stdout.on('data', (buffer) => (response += buffer.toString()));
-    child.stdout.on('end', () => callback(response));
+    let response = "";
+    child.stdout.on("data", (buffer) => (response += buffer.toString()));
+    child.stdout.on("end", () => callback(response));
   };
-  if (event && event.payload && event.payload.ref === 'refs/heads/main') {
+  if (event && event.payload && event.payload.ref === "refs/heads/main") {
     // 执行自动部署脚本
-    console.log('开始执行脚本');
-    rumCommand('sh', ['./deploy.sh'], (txt) => {
-      console.log('脚本运行结束');
+    console.log("开始执行脚本");
+    rumCommand("sh", ["./deploy.sh"], (txt) => {
       console.log(txt);
     });
   } else {
-    console.log('推送的不是main分支');
+    console.log("推送的不是main分支");
   }
 });
 
