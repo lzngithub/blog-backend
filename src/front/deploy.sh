@@ -16,6 +16,6 @@ cd ../blog-backend/src/front || exit
 
 echo '重新启动前端服务'
 
-pm2 restart frontServer.js
+pm2 restart server.js
 
 echo '前端服务更新成功'
