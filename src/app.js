@@ -9,6 +9,7 @@ http
       res.end("no such location");
       console.log(err);
       console.log("匹配不到路由咯");
+      console.log("测试文本");
     });
     handlerBack(req, res, function (err) {
       res.statusCode = 404;
