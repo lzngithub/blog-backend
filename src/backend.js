@@ -55,8 +55,9 @@ handlerBack.on('error', function (err) {
 
 //监听push钩子 时触发函数
 handlerBack.on('push', function (event) {
-  console.log('Received a push');
-  console.log(event.payload.repository.name, event.payload.ref);
+  console.log('收到一条更新来自：');
+  console.log('仓库' + event.payload.repository.name);
+  console.log('分支' + event.payload.ref);
   const rumCommand = (cmd, args, callback) => {
     const child = spawn(cmd, args);
     let response = '';
@@ -65,6 +66,7 @@ handlerBack.on('push', function (event) {
   };
   if (event && event.payload && event.payload.ref === 'refs/heads/main') {
     // 执行自动部署脚本
+    console.log('开始执行脚本');
     rumCommand('sh', ['./back_pull_code.sh'], (txt) => {
       console.log('拉取代码成功');
       console.log(txt);
