@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 进入项目文件
-cd ../../blog-vuepress || exit
+cd ../../../blog-vuepress || exit
 
 # 拉取代码
 git pull --force
@@ -12,12 +12,10 @@ yarn
 # 打包项目
 yarn build
 
-cd ../blog-backend/src || exit
+cd ../blog-backend/src/front || exit
 
-# 停止项目
-pm2 stop frontend.js
+echo '重新启动前端服务'
 
-# 重新启动项目
-pm2 start frontend.js
+pm2 restart frontServer.js
 
 echo '前端服务更新成功'
