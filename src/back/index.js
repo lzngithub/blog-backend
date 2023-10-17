@@ -25,7 +25,7 @@ handler.on('push', function (event) {
     // 执行自动部署脚本
     console.log('开始执行脚本');
     rumCommand('sh', ['./deploy.sh'], (txt) => {
-      console.log('拉取代码成功');
+      console.log('脚本运行结束');
       console.log(txt);
     });
   } else {
